@@ -1,4 +1,7 @@
 {
   "name": "cq-vue",
-  "compatibility_date": "2025-10-18"
+  "compatibility_date": "2025-10-18",
+  "assets": {
+		"directory": "./dist"
+  }
 }
