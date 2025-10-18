@@ -1,5 +1,4 @@
 {
   "name": "cq-vue",
-  "compatibility_date": "2025-10-18",
-  "main": "./src/main.js"
+  "compatibility_date": "2025-10-18"
 }
