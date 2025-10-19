@@ -19,7 +19,8 @@ const currentUri = window.location.origin;
 const cognitoAuthConfig = {
     authority: "https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_PVDEJLbWr",
     client_id: "3sqcotan294u4lgf6r9dpr4r92",
-    redirect_uri: "https://cq-vue.michal-ca5.workers.dev",
+    //redirect_uri: "https://cq-vue.michal-ca5.workers.dev",
+		redirect_uri: `${currentUri}/authInfo`,
     response_type: "code",
     scope: "phone openid email"
 };
@@ -28,14 +29,17 @@ const cognitoAuthConfig = {
 export const userManager = new UserManager({
     ...cognitoAuthConfig,
 });
-await userManager.signinRedirect();
+//await userManager.signinRedirect();
 
 export async function signOutRedirect () {
     const clientId = "3sqcotan294u4lgf6r9dpr4r92";
-    const logoutUri = "https://lfm.pages.dev";
-    const cognitoDomain = "https://eu-north-1fmjl162v7.auth.eu-north-1.amazoncognito.com";
+//    const logoutUri = "https://lfm.pages.dev";
+    const logoutUri = `${currentUri}`;
+		const cognitoDomain = "https://eu-north-1pvdejlbwr.auth.eu-north-1.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
 };
+
+//signOutRedirect();
 
 // APP
 

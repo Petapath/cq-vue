@@ -1,21 +1,26 @@
+<script setup type="module">
+		import { userManager } from "../main.js";
+		import { ref } from 'vue';
+
+		const myText = ref("ABC");
+
+	  async function handleLogin(event) {
+				await userManager.signinRedirect();
+    };
+
+</script>
+
+
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>{{ myText }} </h1>
 		<br>
 	  <h1>Where is my button  </h1>
-		<button id="signIn">Sign In</button>
+		<button @click="handleLogin">Sign In</button>
 	</div>
 </template>
 
-
-<!-- script type="module">
-		import { userManager } from "../main.js";
-
-		document.getElementById("signIn").addEventListener("click", async () => {
-				//await userManager.signinRedirect();
-				await userManager.signinPopup();
-		});
-</script -->
 
 
 <style>
