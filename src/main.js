@@ -13,26 +13,29 @@ import router from './router'
 
 import { UserManager } from "oidc-client-ts";
 
+const currentUri = window.location.origin;
+
+
 const cognitoAuthConfig = {
-    authority: "https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_FmJL162V7",
-    client_id: "72eh4635l92ar1inrulgbuf7gt",
-    redirect_uri: "https://d84l1y8p4kdic.cloudfront.net",
+    authority: "https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_PVDEJLbWr",
+    client_id: "3sqcotan294u4lgf6r9dpr4r92",
+    redirect_uri: "https://cq-vue.michal-ca5.workers.dev",
     response_type: "code",
-    scope: "email openid phone"
+    scope: "phone openid email"
 };
 
 // create a UserManager instance
 export const userManager = new UserManager({
     ...cognitoAuthConfig,
 });
+await userManager.signinRedirect();
 
 export async function signOutRedirect () {
-    const clientId = "72eh4635l92ar1inrulgbuf7gt";
-    const logoutUri = "<logout uri>";
+    const clientId = "3sqcotan294u4lgf6r9dpr4r92";
+    const logoutUri = "https://lfm.pages.dev";
     const cognitoDomain = "https://eu-north-1fmjl162v7.auth.eu-north-1.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
 };
-
 
 // APP
 

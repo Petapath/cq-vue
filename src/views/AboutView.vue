@@ -1,23 +1,22 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-  </div>
-
-
-	// add sign-in button
-	<div>
-			<button id="signIn">Sign In</button>
+		<br>
+	  <h1>Where is my button  </h1>
+		<button id="signIn">Sign In</button>
 	</div>
-
-	<script type="module">
-			import { userManager } from "../main.js";
-
-			document.getElementById("signIn").addEventListener("click", async () => {
-					await userManager.signinRedirect();
-			});
-	</script>
-
 </template>
+
+
+<!-- script type="module">
+		import { userManager } from "../main.js";
+
+		document.getElementById("signIn").addEventListener("click", async () => {
+				//await userManager.signinRedirect();
+				await userManager.signinPopup();
+		});
+</script -->
+
 
 <style>
 @media (min-width: 1024px) {
