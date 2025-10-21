@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/authInfo">AuthInfo</RouterLink>
+        <RouterLink to="/iotsitewise">AWS IoT SiteWise</RouterLink>
       </nav>
     </div>
   </header>

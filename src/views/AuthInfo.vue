@@ -1,19 +1,19 @@
-<template>
-	<div>
-			Hello: <pre id="email"></pre>
-			Access token: <pre id="access-token"></pre>
-			ID token: <pre id="id-token"></pre>
-			Refresh token: <pre id="refresh-token"></pre>
-	</div>
-</template>
-
 <script setup type="module">
-    import { userManager } from "../main.js";
+    import {ref} from "vue";
+    import {getUser} from "@/main.js";
 
-    userManager.signinCallback().then(function (user) {
-        document.getElementById("email").textContent = user.profile?.email;
-        document.getElementById("access-token").textContent = user.access_token;
-        document.getElementById("id-token").textContent = user.id_token;
-        document.getElementById("refresh-token").textContent = user.refresh_token;
-    });
+    const user = getUser();
+    const email = ref(user.profile?.email);
+    const accessToken = ref(user.access_token);
+    const idToken = ref(user.id_token);
+    const refreshToken = ref(user.refresh_token);
 </script>
+
+<template>
+  <div>
+    Hello: <pre id="email">{{ email }}</pre>
+    Access token: <pre id="access-token">{{ accessToken }}</pre>
+    ID token: <pre id="id-token">{{ idToken }}</pre>
+    Refresh token: <pre id="refresh-token">{{ refreshToken }}</pre>
+  </div>
+</template>

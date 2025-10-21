@@ -15,7 +15,6 @@ import { UserManager } from "oidc-client-ts";
 
 const currentUri = window.location.origin;
 
-
 const cognitoAuthConfig = {
     authority: "https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_PVDEJLbWr",
     client_id: "3sqcotan294u4lgf6r9dpr4r92",
@@ -39,6 +38,14 @@ export async function signOutRedirect () {
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
 };
 
+userManager?.signinCallback().then(function (user) {
+  window.sessionStorage.setItem('user', JSON.stringify(user));
+});
+
+export const getUser = () => {
+  const userString = window.sessionStorage.getItem('user');
+  return JSON.parse(userString);
+}
 //signOutRedirect();
 
 // APP
