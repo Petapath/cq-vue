@@ -14,12 +14,12 @@
   const user = getUser();
   const cognitoProvider = fromCognitoIdentityPool({
     clientConfig: {
-      region: "eu-north-1", // Replace with your AWS Region
+      region: "us-east-1", // Replace with your AWS Region
     },
-    identityPoolId: "eu-north-1:d01661f1-64d3-494c-846b-6d1a72235aae", // Replace with your Identity Pool ID,
+    identityPoolId: "us-east-1:a25c5ccd-e232-47cf-82dd-b518445f44a5", // Replace with your Identity Pool ID,
     logins: {
       // Map your User Pool's identity provider to the ID token
-      "cognito-idp.eu-north-1.amazonaws.com/eu-north-1_PVDEJLbWr": user.id_token,
+      "cognito-idp.us-east-1.amazonaws.com/us-east-1_ookACd3FN": user.id_token,
     },
   });
 
