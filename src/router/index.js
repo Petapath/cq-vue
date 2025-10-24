@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: HomeView
     },
     {
       path: '/about',
@@ -15,7 +15,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/AboutView.vue')
     },
     {
       path: '/authInfo',
@@ -23,7 +23,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AuthInfo.vue'),
+      component: () => import('../views/AuthInfo.vue')
     },
     {
       path: '/iotsitewise',
@@ -31,9 +31,17 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AWSIoTSiteWise.vue'),
+      component: () => import('../views/AWSIoTSiteWise.vue')
     },
-  ],
+    {
+      path: '/chart',
+      name: 'chart',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ChartView.vue')
+    }
+  ]
 })
 
 export default router

@@ -23,6 +23,11 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 
 ```sh
 npm install
+npm install oidc-client-ts --save
+npm install @aws-sdk/client-verifiedpermissions
+npm install @aws-sdk/client-iotsitewise
+npm install primevue @primeuix/themes
+npm install chart.js
 ```
 
 ### Compile and Hot-Reload for Development
